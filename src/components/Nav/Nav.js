@@ -1,13 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { MENU_ZINDEX } from "../../consts";
+import homeIcon from "../../static/icons/typewriter.svg";
+import visualPoetryIcon from "../../static/icons/eye.svg";
+import visualPiecesIcon from "../../static/icons/paint-spray.svg";
+import justTextIcon from "../../static/icons/fountain-pen-close-up.svg";
+import contactIcon from "../../static/icons/contact.svg";
+import bioIcon from "../../static/icons/anonymous.svg";
 
 const NavBody = styled("div")`
-  height: 250px;
-  width: 250px;
+  height: 500px;
+  width: 300px;
   padding: 15px;
-  border: 1px solid black;
+
+  background-color: transparent;
   position: fixed;
   bottom: 10px;
   right: 10px;
@@ -16,19 +23,39 @@ const NavBody = styled("div")`
   flex-direction: column;
   justify-content: space-evenly;
   z-index: ${MENU_ZINDEX};
-  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
-    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+
+  text-align: end;
+`;
+const ListIcon = styled("img")`
+  height: 25px;
+  width: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+  top: 5px;
+  position: relative;
 `;
 
 export default function Nav() {
   return (
-    <NavBody>
-      <Link to="/">+ Home</Link>
-      <Link to="/visual-poetry">+ Visual Poetry</Link>
-      <Link to="/visual-pieces">+ Visual Pieces</Link>
-      <Link to="/just-text">+ Just Text</Link>
-      <Link to="/contact">+ Contact</Link>
-      <Link to="/bio">+ Bio</Link>
+    <NavBody className="header">
+      <Link to="/">
+        Home <ListIcon src={homeIcon} />
+      </Link>
+      <Link to="/visual-poetry">
+        Visual Poetry <ListIcon src={visualPoetryIcon} />
+      </Link>
+      <Link to="/visual-pieces">
+        Visual Pieces <ListIcon src={visualPiecesIcon} />
+      </Link>
+      <Link to="/just-text">
+        Just Text <ListIcon src={justTextIcon} />
+      </Link>
+      <Link to="/contact">
+        Contact <ListIcon src={contactIcon} />
+      </Link>
+      <Link to="/bio">
+        Bio <ListIcon src={bioIcon} />
+      </Link>
     </NavBody>
   );
 }
