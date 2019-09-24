@@ -23,7 +23,7 @@ const HomeImage = styled("img")`
 `;
 export default function Home() {
   return (
-    <HomeBody>
+    <HomeBody className="header">
       {/* <HomeImage src={homeBackground} /> */}
       Home
     </HomeBody>
