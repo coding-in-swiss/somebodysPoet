@@ -10,10 +10,13 @@ import contactIcon from "../../static/icons/contact.svg";
 import bioIcon from "../../static/icons/anonymous.svg";
 
 const NavBody = styled("div")`
-  height: 500px;
+  height: 300px;
   width: 300px;
   padding: 15px;
-
+  ${props =>
+    props.pathname === "/visual-poetry"
+      ? "filter:invert(1);"
+      : "filter:invert(0);"}
   background-color: transparent;
   position: fixed;
   bottom: 10px;
@@ -36,8 +39,10 @@ const ListIcon = styled("img")`
 `;
 
 export default function Nav() {
+  const path = window.location.pathname;
+  console.log(path);
   return (
-    <NavBody className="header">
+    <NavBody className="header" pathname={path}>
       <Link to="/">
         Home <ListIcon src={homeIcon} />
       </Link>
